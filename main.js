@@ -24,9 +24,26 @@ function addItem(){
     setItems(items);
     refreshList();
 }
+function updateItem(item, key, value){
+item [key] = value;
+
+setItems(items);
+refreshList();
+}
+
 
 function refreshList(){
     //TODO sort items
+
+    items.sort((a,b) =>{
+        if (a.completed){
+            return 1;
+        }
+        if(b.completed){
+            return -1;
+        }
+        return a.description < b.description ? -1:1;
+    })
     ITEMS_CONTAINER.innerHTML = "";
 
     for(const item of items){
@@ -37,7 +54,16 @@ function refreshList(){
         descriptionInput.value = item.description;
         completedInput.checked = item.completed;
 
-        ITEMS_CONTAINER>append(itemElement);
+        descriptionInput.addEventListener("change", ()=> {
+            updateItem(item,"description",descriptionInput.value);
+        });
+
+
+        completedInput.addEventListener("completed", ()=>{
+            updateItem(item,"completed",completedInput.checked);
+        })
+
+        ITEMS_CONTAINER.append(itemElement);
     }
 }
 
