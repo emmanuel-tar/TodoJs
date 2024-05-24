@@ -12,14 +12,13 @@ return JSON.parse(value);
 }
 function setItems(items){
     const itemsJson = JSON.stringify(items);
-
     localStorage.setItem("todo-test",itemsJson);
 }
 
 function addItem(){
     items.unshift({
-        description: " ",;
-        completed:false;
+        description: " ",
+        completed:false
     });
 
     setItems(items);

@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Sets the title of the page to "To-Do List" -->
         <title>To-Do List</title>
+
+        <!-- Specifies the character encoding as UTF-8 -->
         <meta charset="UTF-8">
+
+        <!-- Sets the viewport settings for mobile devices -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Links to an external stylesheet (main.css) -->
         <link href="main.css" rel="stylesheet">
+
+        <!-- Links to an external JavaScript file (main.js) and is set to defer, which means the script will be executed after the page has finished parsing -->
         <script src="main.js" defer></script>
     </head>
     <body>
+
+    <!-- Container for the to-do list items -->
     <div id="items">   
     </div>
-    <template id="itemTemplate">
-    <div class="item">
 
-    <input type="checkbox" class="item-completed">
-    <input type="text" class ="item-description" placeholder="To-Do item....">
-        
-    </div>
+    <!-- Template for a single to-do list item -->
+    <template id="itemTemplate">
+        <div class="item">
+
+            <!-- Checkbox for marking an item as completed -->
+            <input type="checkbox" class="item-completed">
+
+            <!-- Text input for entering a to-do item description -->
+            <input type="text" class ="item-description" placeholder="To-Do item....">
+
+        </div>
     </template>
+
+    <!-- Button for adding new to-do list items -->
     <button id="add">Add Item</button>
+
     </body>
 </html>
