@@ -43,7 +43,8 @@ function refreshList(){
             return -1;
         }
         return a.description < b.description ? -1:1;
-    })
+    });
+    
     ITEMS_CONTAINER.innerHTML = "";
 
     for(const item of items){
